@@ -15,14 +15,33 @@ h1 {
     font-size: 28px;
 }
 
+button {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+}
+
+.columns {
+    width: 50%;
+    height: 100%;
+}
+
+.breakfast {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 #categories {
     background-color: #FFFFFF;
-    width: 50%;
+
 }
 
 #shoppingcart {
     background-color: #F7F5F8;
-    width: 50%;
     text-align: center;
 }
 
