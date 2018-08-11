@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+    display: flex;
+}
+
+header {
+    color: #FFFFFF;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    margin-top: -19px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+#categories {
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+#shoppingcart {
+    background-color: #F7F5F8;
+    width: 50%;
+    text-align: center;
+}
+
