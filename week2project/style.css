@@ -42,7 +42,8 @@ img {
     height: 100px;
     display: flex;
     justify-content: center;
-    margin: 5%;
+    margin: 3%;
+    position: relative;
 }
 
 .columns {
@@ -63,6 +64,15 @@ img {
 #shoppingcart {
     background-color: #F7F5F8;
     text-align: center;
-
 }
 
+.food > p {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    color: #F7F5F8;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    height: 25%;
+}
