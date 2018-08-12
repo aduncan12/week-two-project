@@ -1,3 +1,5 @@
+var emptyCategory = [];
+
 var breakfastItems = [
     {   img: './assets/Breakfast/bacon.png',
         name: 'Bacon'},
@@ -49,10 +51,19 @@ var dinnerItems = [
         name: 'Salmon'},
 ];
 
-document.getElementById('breakfast').addEventListener('click', populateItems)
+document.getElementById('breakfast').addEventListener('click', addBreakfast);
+document.getElementById('lunch').addEventListener('click', addLunch);
+document.getElementById('dinner').addEventListener('click', addDinner);
 
 
 
-var populateItems = function (){
-    breakfastItems
+function addBreakfast(){
+    var breakfastItems = breakfastItems;
+    console.log('check');
+}
+function addLunch(){
+    lunchItems
+}
+function addDinner(){
+    dinnerItems
 }
