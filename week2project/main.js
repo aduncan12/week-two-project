@@ -15,7 +15,7 @@ var breakfastItems = [
         name: 'Toast'},
     {   img: './assets/Breakfast/homefries.jpeg',
         name: 'Home Fries'},                        
-    ];
+];
 
 var lunchItems = [
     {   img: './assets/Lunch/burger.jpeg',
@@ -49,3 +49,10 @@ var dinnerItems = [
         name: 'Salmon'},
 ];
 
+document.getElementById('breakfast').addEventListener('click', populateItems)
+
+
+
+var populateItems = function (){
+    breakfastItems
+}
