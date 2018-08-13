@@ -17,7 +17,7 @@ var breakfastItems = [
         name: 'Toast'},
     {   img: 'assets/Breakfast/homefries.jpeg',
         name: 'Home Fries'},                        
-]
+];
 console.log('breakfast');
 
 var lunchItems = [
@@ -33,7 +33,7 @@ var lunchItems = [
         name: 'French Fries'},
     {   img: 'assets/Lunch/pastasalad.jpeg',
         name: 'Pasta Salad'}        
-]
+];
 console.log('lunch');
 
 var dinnerItems = [
@@ -51,7 +51,7 @@ var dinnerItems = [
         name: 'Tomato Soup'},
     {   img: 'assets/Dinner/salmon.jpeg',
         name: 'Salmon'},
-]
+];
 console.log('dinner');
 
 $('#breakfast').click(function() {
@@ -71,7 +71,7 @@ $('#dinner').click(function() {
 
 function addItems(menuItems) {
     emptyItems();
-    console.log('menuItems')
+    console.log('empty')
 
 	var menuItems ;
 	switch(menuItems) {
@@ -85,11 +85,24 @@ function addItems(menuItems) {
             menuItems = dinnerItems;
 			break;
         default:
+    }
+    
+	var menuList = $('<ul>');
+	for(var i = 0; i < menuItems.length; i++) {
+		var selectedItem = menuItems[i];
+
+		menuList.append(
+			`<li class="selections">
+				<img src="${selectedItem.img}">
+				<p>${selectedItem.name}</p>
+			</li>`);
 	}
+
+	$('.selections').append(menuList);
 }
 
 function emptyItems() {
-	$('#selections').empty();
+	$('.selections').empty();
 }
 
 
