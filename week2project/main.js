@@ -1,4 +1,4 @@
-var emptyCategory = [];
+// var emptyCategory = [];
 
 var breakfastItems = [
     {   img: 'assets/Breakfast/bacon.png',
@@ -71,7 +71,6 @@ $('#dinner').click(function() {
 
 function addItems(menuItems) {
     emptyItems();
-    console.log('empty')
 
 	var menuItems ;
 	switch(menuItems) {
@@ -105,7 +104,22 @@ function emptyItems() {
 	$('.selections').empty();
 }
 
+$('.selections').on('click', '.cart', function() {
+	var cartItem = $(this).find('p').text();
+	shoppingCart(cartItem);
+});
+
+function clearItems() {
+	$('.selections').empty();
+}
 
 
+function shoppingCart(cart) {
+	$('#shoppingcart ul').append(`
+		<li>
+			${cart}
+		</li>
+	`);
+}
 
 
