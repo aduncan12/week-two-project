@@ -51,19 +51,97 @@ var dinnerItems = [
         name: 'Salmon'},
 ];
 
-document.getElementById('breakfast').addEventListener('click', addBreakfast);
-document.getElementById('lunch').addEventListener('click', addLunch);
-document.getElementById('dinner').addEventListener('click', addDinner);
+$('#breakfast').click(function() {
+	addItems('breakfast');
+});
+
+$('#lunch').click(function() {
+	addItems('lunch');
+});
+
+$('#dinner').click(function() {
+	addItems('dinner');
+});
+
+// Add click handlers to each shopping item
+$('#selections').on('click', '.shopping-item', function() {
+	var itemName = $(this).find('p').text();
+	addToCart(itemName);
+});
+
+
+// Populate menu items
+function addItems(category) {
+	emptyItems();
+
+	var menuItems;
+	switch(category) {
+		case 'breakfast':
+			menuItems = breakfastItems;
+			break;
+		case 'lunch':
+            menuItems = lunchItems;
+			break;
+		case 'dinner':
+            menuItems = dinnerItems;
+			break;
+		default:
+	}
+
+	var updatedList = $('<ul>');
+	for(var i = 0; i < menuItems.length; i++) {
+		var currentItem = menuItems[i];
+
+		updatedList.append(
+			`<li class="shopping-item">
+				<img src="${currentItem.img}">
+				<p>${currentItem.name}</p>
+			</li>`);
+	}
+
+	$('#selections').append(updatedList);
+}
+
+// Clear our current shopping-items
+function emptyItems() {
+	$('#selections').empty();
+}
+
+// Add item to shopping cart
+function addToCart(item) {
+	$('#shoppingcart ul').append(`
+		<li>
+			${item}
+		</li>
+	`);
+}
 
 
 
-function addBreakfast(){
-    var breakfastItems = breakfastItems;
-    console.log('check');
-}
-function addLunch(){
-    lunchItems
-}
-function addDinner(){
-    dinnerItems
-}
+
+
+
+
+
+// document.getElementById('breakfast').addEventListener('click', addBreakfast);
+// document.getElementById('lunch').addEventListener('click', addLunch);
+// document.getElementById('dinner').addEventListener('click', addDinner);
+
+
+
+// function addBreakfast(){
+//     function emptyItems() {
+//         $('selections').empty();
+//     }
+//     console.log('Breakfast has been clicked');
+// }
+// function addLunch(){
+//     lunchItems
+// }
+// function addDinner(){
+//     dinnerItems
+// }
+
+// function emptyItems() {
+// 	$('selections').empty();
+// }
