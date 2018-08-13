@@ -1,5 +1,6 @@
 // var emptyCategory = [];
 
+// menu item arrays
 var breakfastItems = [
     {   img: 'assets/Breakfast/bacon.png',
         name: 'Bacon'},
@@ -54,6 +55,7 @@ var dinnerItems = [
 ];
 console.log('dinner');
 
+//functions for buttons
 $('#breakfast').click(function() {
     addItems('breakfast');
     console.log('breakfast button clicked')
@@ -69,6 +71,14 @@ $('#dinner').click(function() {
     console.log('dinner button clicked')
 });
 
+
+$('.selections').on('click', function() {
+	var cartItem = $(this).find('p').text();
+    shoppingCart(cartItem);
+    console.log('cart');
+});
+
+//add arrays to category
 function addItems(menuItems) {
     emptyItems();
 
@@ -90,6 +100,7 @@ function addItems(menuItems) {
 	for(var i = 0; i < menuItems.length; i++) {
 		var selectedItem = menuItems[i];
 
+// assign img and name to each array value
 		menuList.append(
 			`<li class="selections">
 				<img src="${selectedItem.img}">
@@ -104,20 +115,10 @@ function emptyItems() {
 	$('.selections').empty();
 }
 
-$('.selections').on('click', '.cart', function() {
-	var cartItem = $(this).find('p').text();
-	shoppingCart(cartItem);
-});
-
-function clearItems() {
-	$('.selections').empty();
-}
-
-
-function shoppingCart(cart) {
+function shoppingCart(cartItem) {
 	$('#shoppingcart ul').append(`
 		<li>
-			${cart}
+			${cartItem}
 		</li>
 	`);
 }

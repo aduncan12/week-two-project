@@ -62,7 +62,7 @@ button {
     background: rgba(0, 0, 0, 0.25);
     color: #F7F5F8;
     /* text-align: center; */
-    height: 50%;
+    height: 40%;
     width: 100%;
     margin-left: -40px;
     display: flex;
@@ -95,13 +95,16 @@ button {
     text-align: center;
 }
 
-/* #shoppingcart ul {
+#shoppingcart ul {
 	list-style: none;
 	padding: 0;
-} */
-
-#shoppingcart li {
-	color: red;
-	font-size: 18px;
 }
 
+#shoppingcart li {
+	color: #FF0000;
+	font-size: 20px;
+}
+
+.item {
+    font-size: 20px
+}
