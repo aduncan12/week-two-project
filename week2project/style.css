@@ -12,8 +12,6 @@ img {
     height: 50%;
 }
 
-
-
 .columns {
     width: 50%;
     min-height: 100vh;
@@ -53,27 +51,22 @@ button {
 .selections {
     display: flex;
     flex-flow: row wrap;
-    /* padding: 7% 5%; */
-    justify-content: center;
-    /* width: 40%;
-    height: 100px; */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 3%;
+    /* justify-content: center; */
+    width: 100%;
     position: relative;
-
 }
 
 .selections ul {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     background: rgba(0, 0, 0, 0.25);
     color: #F7F5F8;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    height: 25%;   
+    /* text-align: center; */
+    height: 50%;
+    width: 500%;
+    margin-left: -40px;
+    display: flex;
+    flex-flow: column wrap;
 } 
 
 .food {
